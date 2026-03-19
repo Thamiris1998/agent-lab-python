@@ -221,6 +221,7 @@
             ? '../workshop/'
             : 'https://raw.githubusercontent.com/copilot-dev-days/agent-lab-python/main/workshop/';
         const CHECKBOX_STORAGE_KEY = 'agent-lab-checkboxes-v1';
+        const COPY_FEEDBACK_DURATION_MS = 1600;
         let checkboxSaveTimeout;
 
         // Get current step from URL
@@ -255,6 +256,21 @@
             checkboxSaveTimeout = setTimeout(() => writeCheckboxState(state), 100);
         }
 
+        function applyVisuallyHiddenStyles(element) {
+            Object.assign(element.style, {
+                position: 'absolute',
+                width: '1px',
+                height: '1px',
+                padding: '0',
+                margin: '-1px',
+                border: '0',
+                overflow: 'hidden',
+                clip: 'rect(0 0 0 0)',
+                clipPath: 'inset(50%)',
+                whiteSpace: 'nowrap'
+            });
+        }
+
         function initializeTaskListCheckboxes(stepId) {
             const container = document.getElementById('markdown-content');
             if (!container) return;
@@ -279,6 +295,64 @@
                     allState[stepId] = stepState;
                     writeCheckboxStateDebounced(allState);
                 });
+            });
+        }
+
+        async function copyTextToClipboard(text) {
+            if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(text);
+                return;
+            }
+
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.setAttribute('readonly', '');
+            applyVisuallyHiddenStyles(textArea);
+            document.body.appendChild(textArea);
+            textArea.select();
+
+            const copySucceeded = document.execCommand('copy');
+            textArea.remove();
+
+            if (!copySucceeded) {
+                throw new Error('Copy failed');
+            }
+        }
+
+        function initializeCodeBlockCopyButtons() {
+            const container = document.getElementById('markdown-content');
+            if (!container) return;
+
+            const codeBlocks = container.querySelectorAll('pre');
+            codeBlocks.forEach((block) => {
+                const codeElement = block.querySelector('code');
+                if (!codeElement || block.querySelector('.code-copy-btn')) return;
+
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'code-copy-btn';
+                button.textContent = 'Copy';
+                button.setAttribute('aria-label', 'Copy code block');
+
+                let resetTimeoutId = null;
+                button.addEventListener('click', async () => {
+                    try {
+                        await copyTextToClipboard(codeElement.textContent ?? '');
+                        button.textContent = 'Copied!';
+                        button.classList.add('copied');
+                    } catch {
+                        button.textContent = 'Failed';
+                        button.classList.add('failed');
+                    }
+
+                    clearTimeout(resetTimeoutId);
+                    resetTimeoutId = setTimeout(() => {
+                        button.textContent = 'Copy';
+                        button.classList.remove('copied', 'failed');
+                    }, COPY_FEEDBACK_DURATION_MS);
+                });
+
+                block.appendChild(button);
             });
         }
 
@@ -390,6 +464,7 @@
 
                 document.getElementById('markdown-content').innerHTML = marked.parse(md);
                 initializeTaskListCheckboxes(step.id);
+                initializeCodeBlockCopyButtons();
 
                 // If this is the completion page, add confetti!
                 if (step.id === '05-complete') {
