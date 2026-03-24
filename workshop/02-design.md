@@ -1,6 +1,6 @@
 # Part 2: Design-First Frontend
 
-[📚 Lab Guide](https://madebygps.github.io/vscode-github-copilot-agent-lab/docs/) • [← Part 1](01-setup.md)
+[📚 Lab Guide](https://copilot-dev-days.github.io/agent-lab-python/docs/) • [← Part 1](01-setup.md)
 
 ---
 
@@ -16,8 +16,8 @@ Use the **Plan agent** to start any bigger work item. Iterate on the plan (2+ ti
 
 ### Steps
 
-1. Click the **New Session dropdown** (`+`) and select **Plan**
-2. Make sure the **session type dropdown** at the bottom of the chat input shows **Local** (if your previous session was Cloud, switch it back)
+1. In the **chat mode dropdown** (bottom-left of the chat input), select **Plan**
+2. Make sure the **session type dropdown** shows **Local** (if your previous session was Cloud, switch it back)
 3. Enter your vision:
    ```
    Let's do a full redesign. Make it [YOUR THEME]
@@ -62,26 +62,34 @@ When you make major architecture, design, or dependency changes, update your ins
 
 ## 🚀 Task 3: Scale Exploration with Cloud Agents
 
-> ⚠️ **Free-tier Copilot users:** Cloud Agents require a **Copilot Pro, Business, or Enterprise** subscription. If you're on the free tier you will see a 403 Forbidden error. **Alternative:** Use **Autopilot** mode or a local **Plan** session to explore one design variation at a time.
-
 Generate multiple design variations in parallel using cloud agents.
 
-### Steps
+> **If you have Copilot Pro, Business, or Enterprise:**
+>
+> 1. In the **chat mode dropdown** (bottom-left of the chat input), select **Plan**
+> 2. Enter:
+>    ```
+>    Redesign the start screen as a more engaging landing page
+>    ```
+> 3. Note the variations suggested in the plan
+> 4. Run the exploration prompt:
+>    ```
+>    /cloud-explore design variations
+>    ```
+>    📄 See `.github/prompts/cloud-explore.prompt.md`
+>
+> 5. Check **Agent Sessions** to track the 3 new cloud agents
+> 6. Click any session to follow progress or open in web
 
-1. Click the **New Session dropdown** (`+`) and select **Plan**
-2. Enter:
-   ```
-   Redesign the start screen as a more engaging landing page
-   ```
-3. Note the variations suggested in the plan
-4. Run the exploration prompt:
-   ```
-   /cloud-explore design variations
-   ```
-   📄 See `.github/prompts/cloud-explore.prompt.md`
-
-5. Check **Agent Sessions** to track the 3 new cloud agents
-6. Click any session to follow progress or open in web
+> **If you're on the free tier (no Cloud access):**
+>
+> 1. Use **Autopilot** mode or a local **Plan** session to explore one design variation at a time
+> 2. In the **chat mode dropdown** (bottom-left of the chat input), select **Plan**
+> 3. Enter:
+>    ```
+>    Redesign the start screen as a more engaging landing page
+>    ```
+> 4. Review and implement the plan, then repeat with a different direction
 
 ### What's Happening
 

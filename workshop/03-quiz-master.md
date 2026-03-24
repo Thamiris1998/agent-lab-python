@@ -25,10 +25,9 @@ Custom agents are defined in `.github/agents/` and provide:
 
 ### Steps
 
-1. Start a **new Chat** (click the **New Session dropdown** `+` → **New Chat Session**)
-2. Make sure the **session type dropdown** at the bottom of the chat input shows **Local**
-3. Expand the **Copilot Modes dropdown** (top of the chat panel, next to the model picker) — you'll see a list of custom agents below the built-in modes (Ask, Agent, Plan). Select **Quiz Master**
-4. Enter your theme:
+1. In the **chat mode dropdown** (bottom-left of the chat input), you'll see the built-in modes (**Agent**, **Ask**, **Plan**) and custom agents listed below them. Select **Quiz Master**
+2. Make sure the **session type dropdown** shows **Local**
+3. Enter your theme:
    ```
    Update questions to [YOUR THEME]
    ```
@@ -69,21 +68,31 @@ Custom agents are defined in `.github/agents/` and provide:
 
 ## ☁️ Task: Cloud Quiz Generation
 
-> ⚠️ **Free-tier Copilot users:** Cloud Agents require a **Copilot Pro, Business, or Enterprise** subscription. If you're on the free tier, skip this task or use a **Local** session with the Quiz Master agent instead.
-
 Run the quiz master as a cloud agent for async generation.
 
 ### Steps
 
-1. Click the **New Session dropdown** (`+`), select **New Chat Session**, then choose **Cloud** from the **session type dropdown** at the bottom of the chat input
-2. Select **Quiz Master** as the custom agent
-3. Enter a different theme:
-   ```
-   Create a Tech Life Bingo with questions about 
-   coding habits, IDE preferences, and developer culture
-   ```
-4. Let it run in the background
-5. Review the PR when ready
+> **If you have Copilot Pro, Business, or Enterprise:**
+>
+> 1. In the **chat mode dropdown** (bottom-left of the chat input), select **Quiz Master**
+> 2. In the **session type dropdown** (bottom-left), select **Cloud**
+> 3. Enter a different theme:
+>    ```
+>    Create a Tech Life Bingo with questions about 
+>    coding habits, IDE preferences, and developer culture
+>    ```
+> 4. Let it run in the background
+> 5. Review the PR when ready
+
+> **If you're on the free tier (no Cloud access):**
+>
+> 1. In the **chat mode dropdown** (bottom-left of the chat input), select **Quiz Master**
+> 2. Keep the **session type dropdown** set to **Local**
+> 3. Enter a different theme:
+>    ```
+>    Create a Tech Life Bingo with questions about 
+>    coding habits, IDE preferences, and developer culture
+>    ```
 
 ✅ **Result:** Custom agent generates creative, themed questions while you continue working.
 

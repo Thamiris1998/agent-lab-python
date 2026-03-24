@@ -1,6 +1,6 @@
 # Soc Ops — VS Code GitHub Copilot Agent Lab
 
-[📚 Lab Guide](https://madebygps.github.io/vscode-github-copilot-agent-lab/docs/) • [← README](../README.md)
+[📚 Lab Guide](https://copilot-dev-days.github.io/agent-lab-python/docs/) • [← README](../README.md)
 
 ---
 

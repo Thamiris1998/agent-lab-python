@@ -1,6 +1,6 @@
 # Part 1: Setup & Context Engineering
 
-[📚 Lab Guide](https://madebygps.github.io/vscode-github-copilot-agent-lab/docs/) • [← Overview](00-overview.md)
+[📚 Lab Guide](https://copilot-dev-days.github.io/agent-lab-python/docs/) • [← Overview](00-overview.md)
 
 ---
 
@@ -87,13 +87,14 @@ Instructions guide all agentic interactions, making them efficient and reliable.
 
 Copilot CLI sessions run in isolated git worktrees, which is perfect for tasks that don't need handholding.
 
-> 💡 **Two UI controls to know:**
-> - **New Session dropdown** (`+`) -- opens a picker to create a new session of a specific type
-> - **Session type dropdown** (shows `Local` by default, bottom of the chat input) -- used for agent handoff; carries over the current conversation to a different agent type
+> 💡 **Three UI controls to know:**
+> - **New session (`+`)** (top of the Chat panel) — create a **New Chat**, **New Chat Editor**, **New Chat Window**, or **New Copilot CLI Session**
+> - **Chat mode dropdown** (bottom-left of the chat input, shows **Agent** by default) — pick a mode (**Agent**, **Ask**, **Plan**) or a custom agent
+> - **Session type dropdown** (bottom-left of the chat input, shows **Local** by default) — hand off or run in a different environment: **Local**, **Copilot CLI**, or **Cloud**
 
 **Start a Copilot CLI session:**
 
-1. Click the **New Session dropdown** (`+`) and select **New Copilot CLI Session**
+1. In the **session type dropdown** (bottom-left, shows **Local**), select **Copilot CLI**
 2. Enter:
    ```
    Add linting rules with ruff for unused vars and type hints; fix any errors
@@ -101,16 +102,23 @@ Copilot CLI sessions run in isolated git worktrees, which is perfect for tasks t
 3. Let it run, then **Review** and **Apply** the changes
 4. Right-click the session to delete it when done
 
-**Start a Cloud Agent session:**
+**Start a Cloud Agent or Copilot CLI session:**
 
-> ⚠️ **Free-tier Copilot users:** Cloud Agents require a **Copilot Pro, Business, or Enterprise** subscription. If you're on the free tier you will see a 403 Forbidden error. **Alternative:** Open a second **Copilot CLI session** instead and give it the same prompt below.
+> **If you have Copilot Pro, Business, or Enterprise:**
+>
+> 1. In the **session type dropdown** (bottom-left), select **Cloud**
+> 2. Enter:
+>    ```
+>    Make the README more engaging as a landing page to the project
+>    ```
 
-1. Click the **New Session dropdown** (`+`) and select **New Chat Session**
-2. In the **session type dropdown** at the bottom of the chat input (shows `Local`), select **Cloud**
-3. Enter:
-   ```
-   Make the README more engaging as a landing page to the project
-   ```
+> **If you're on the free tier (no Cloud access):**
+>
+> 1. In the **session type dropdown** (bottom-left), select **Copilot CLI**
+> 2. Enter:
+>    ```
+>    Make the README more engaging as a landing page to the project
+>    ```
 
 ✅ **Result:** Linting rules added, errors fixed, README improved -- all without interrupting your main workspace!
 

@@ -26,7 +26,7 @@ A new **Scavenger Hunt** mode:
 
 #### Phase 1: Plan
 
-1. Click the **New Session dropdown** (`+`) and select **Plan**
+1. In the **chat mode dropdown** (bottom-left of the chat input), select **Plan**
 2. Enter:
    ```
    Add a new Scavenger Hunt mode: same questions, but shown as a 
@@ -41,7 +41,7 @@ A new **Scavenger Hunt** mode:
 
 #### Phase 2: TDD Red (Write Failing Tests)
 
-1. In the same session, open the **Copilot Modes dropdown** (top of the chat panel) and select the **TDD Red** agent — this hands off the conversation context to the new agent
+1. In the same session, open the **chat mode dropdown** (bottom-left of the chat input) and select the **TDD Red** agent — this hands off the conversation context to the new agent
 2. The agent will begin writing failing tests. Watch as it writes tests for:
    - Component rendering
    - Checkbox interactions
@@ -52,7 +52,7 @@ A new **Scavenger Hunt** mode:
 
 #### Phase 3: TDD Green (Make Tests Pass)
 
-1. When Red is done, switch to the **TDD Green** agent using the **Copilot Modes dropdown**
+1. When Red is done, switch to the **TDD Green** agent using the **chat mode dropdown**
 2. Watch as it:
    - Implements the minimum code to pass tests
    - Runs tests after each change
@@ -60,7 +60,7 @@ A new **Scavenger Hunt** mode:
 
 #### Phase 4: Refactor (Clean Up)
 
-1. Switch to the **TDD Refactor** agent using the **Copilot Modes dropdown**
+1. Switch to the **TDD Refactor** agent using the **chat mode dropdown**
 2. Let it clean up the code while keeping tests green
 
 ### Checkpoint Recovery
@@ -90,9 +90,8 @@ A new **Card Deck Shuffle** mode:
 
 ### Steps
 
-1. Click the **New Session dropdown** (`+`) and select **New Chat Session**
-2. Select **Pixel Jam** from the agent picker
-3. Enter:
+1. In the **chat mode dropdown** (bottom-left of the chat input), select **Pixel Jam**
+2. Enter:
    ```
    New mode: Card Deck Shuffle. Every player opens the game, 
    taps, and gets a random card with a question
@@ -122,7 +121,7 @@ Combine MCP tools, custom workflows, and subagent isolation for powerful review 
 
 ### Steps
 
-1. Start a new Chat with **UI Review**
+1. In the **chat mode dropdown** (bottom-left of the chat input), select **UI Review**
 2. Enter:
    ```
    start

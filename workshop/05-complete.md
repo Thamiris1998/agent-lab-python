@@ -1,6 +1,6 @@
 # 🎉 Workshop Complete!
 
-[📚 Lab Guide](https://madebygps.github.io/vscode-github-copilot-agent-lab/docs/) • [← Part 4](04-multi-agent.md)
+[📚 Lab Guide](https://copilot-dev-days.github.io/agent-lab-python/docs/) • [← Part 4](04-multi-agent.md)
 
 ---
 
