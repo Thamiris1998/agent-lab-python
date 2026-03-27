@@ -1,7 +1,7 @@
 ---
 name: TDD Red
 description: TDD phase for writing FAILING tests
-tools: ['read', 'edit', 'search', 'vscode/runCommand']
+tools: ['read', 'edit', 'search', 'execute']
 argument-hint: Write failing tests for the scavenger hunt feature from the plan above
 handoffs:
   - label: TDD Green

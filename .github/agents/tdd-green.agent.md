@@ -1,7 +1,7 @@
 ---
 name: TDD Green
 description: TDD phase for writing MINIMAL implementation to pass tests
-tools: ['search', 'edit', 'vscode/runCommand']
+tools: ['search', 'edit', 'execute']
 handoffs:
   - label: TDD Refactor
     agent: TDD Refactor
