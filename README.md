@@ -70,6 +70,10 @@ Follow the **5-part guided lab** (1-2 hours total):
 
 Questions? Check [CONTRIBUTING.md](CONTRIBUTING.md) or review the [workshop guides](workshop/).
 
-Passo a passo da configuração
+- Passo a passo da configuração
 
 https://copilot-dev-days.github.io/agent-lab-python/step.html?step=02-design
+
+- link gerado para rodar local 
+
+https://solid-orbit-pgjqr65jgx7cqqv-8000.app.github.dev/
